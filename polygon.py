@@ -47,6 +47,7 @@ class Cube:
             for vertex in edge:
                 glVertex3fv(self.vertices[vertex])
                 glColor3f(0, 1, 0)
+        glEnd()
 
 
 def main():
