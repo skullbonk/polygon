@@ -69,7 +69,7 @@ def main():
                 pygame.quit()
                 quit()
 
-        glRotatef(2, 1, 1, 3)
+        glRotatef(2, 2, 1, 3)
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
         polygon.draw()
         pygame.display.flip()
