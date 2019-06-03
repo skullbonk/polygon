@@ -24,16 +24,16 @@ class Cube:
         (1, 3),
         (3, 2),
         (2, 0),
-        # struts
-        (0, 4),
-        (1, 5),
-        (2, 6),
-        (3, 7),
         # top
         (4, 5),
         (5, 7),
         (7, 6),
-        (6, 4)
+        (6, 4),
+        # struts
+        (0, 4),
+        (1, 5),
+        (2, 6),
+        (3, 7)
     )
 
     def __init__(self):
@@ -52,15 +52,15 @@ class Cube:
 def main():
     pygame.init()
     display = (800, 800)
-    pygame.display.set_mode(display, pygame.DOUBLEBUF | pygame.OPENGL)
+    pygame.display.set_mode(display, DOUBLEBUF | OPENGL)
 
     gluPerspective(45, (display[0]/display[1]), 0.1, 50)
 
     glTranslatef(0, 0, -8)
 
+    polygon = Cube()
     clock = pygame.time.Clock()
     # CHANGE THIS TO DRAW DIFFERENT STUFF
-    polygon = Cube()
     while True:
         clock.tick(60)
         for event in pygame.event.get():
