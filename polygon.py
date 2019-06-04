@@ -1,4 +1,5 @@
 import pygame
+import random
 from pygame.locals import *
 from OpenGL.GL import *
 from OpenGL.GLU import *
@@ -57,7 +58,7 @@ def main():
 
     gluPerspective(45, (display[0]/display[1]), 0.1, 50)
 
-    glTranslatef(0, 0, -8)
+    glTranslatef(0, 0, -5)
 
     polygon = Cube()
     clock = pygame.time.Clock()
@@ -69,7 +70,8 @@ def main():
                 pygame.quit()
                 quit()
 
-        glRotatef(2, 2, 1, 3)
+        # glRotatef(4, 2, 2, 3)
+        glRotatef(random.randint(1, 9), random.randint(1, 9), random.randint(1, 9), random.randint(1, 9))
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
         polygon.draw()
         pygame.display.flip()
